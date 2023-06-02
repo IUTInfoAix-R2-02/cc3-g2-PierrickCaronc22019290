@@ -2,6 +2,7 @@ package fr.amu.iut.cc3;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -81,12 +82,12 @@ public class ToileController implements Initializable {
             try {
                 double note = Double.parseDouble(fieldValue);
                 if (note > noteMaximale) {
-                    System.out.println("La note ne doit pas dépasser " + noteMaximale);
+                    showError("La note ne doit pas dépasser " + noteMaximale);
                     return;
                 }
                 drawPoint(note, axe);
             } catch (NumberFormatException e) {
-                System.out.println("Valeur de note invalide !");
+                showError("Valeur de note invalide !");
             }
         }
     }
@@ -107,6 +108,15 @@ public class ToileController implements Initializable {
         points.put(key, point);
         toile.getChildren().add(point);
     }
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     @FXML
     private void tracerAction() {
         // Logique pour l'action du bouton "Tracer"
@@ -118,5 +128,4 @@ public class ToileController implements Initializable {
         // Logique pour l'action du bouton "Vider"
         System.out.println("Action du bouton Vider");
     }
-
 }

@@ -28,49 +28,49 @@
         <Text text="Compétence 6" x="26" y="99" />
         <Pane fx:id="toile" styleClass="toile" />
     </Pane>
-   <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="307.0">
-     <columnConstraints>
-       <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="150.0" />
-       <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="0.0" prefWidth="50.0" />
-     </columnConstraints>
-     <rowConstraints>
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-     </rowConstraints>
-      <children>
-         <Label text="Compétence 1 - Réaliser" GridPane.rowIndex="2" />
-         <Label layoutX="10.0" layoutY="37.0" text="Compétence 3 - Administrer" GridPane.rowIndex="4" />
-         <Label layoutX="10.0" layoutY="177.0" text="Compétence 2 - Optimiser" GridPane.rowIndex="3" />
-         <Label layoutX="10.0" layoutY="107.0" text="Compétence 4 - Gérer" GridPane.rowIndex="5" />
-         <Label layoutX="10.0" layoutY="247.0" text="Compétence 5- Conduire" GridPane.rowIndex="6" />
-         <Label layoutX="10.0" layoutY="317.0" maxHeight="1.7976931348623157E308" text="Compétence 6 - Collaborer" GridPane.rowIndex="7" />
-         <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-         <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-         <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-         <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-         <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-         <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnSpan="2" GridPane.rowIndex="9">
-            <children>
-               <Button mnemonicParsing="false" text="Tracer">
-                  <opaqueInsets>
-                     <Insets />
-                  </opaqueInsets>
-               </Button>
-               <Button alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Vider" />
-            </children>
-            <padding>
-               <Insets right="15.0" />
-            </padding>
-         </HBox>
-      </children>
-   </GridPane>
+    <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="307.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="0.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <Label text="Compétence 1 - Réaliser" GridPane.rowIndex="2" />
+            <Label layoutX="10.0" layoutY="37.0" text="Compétence 3 - Administrer" GridPane.rowIndex="4" />
+            <Label layoutX="10.0" layoutY="177.0" text="Compétence 2 - Optimiser" GridPane.rowIndex="3" />
+            <Label layoutX="10.0" layoutY="107.0" text="Compétence 4 - Gérer" GridPane.rowIndex="5" />
+            <Label layoutX="10.0" layoutY="247.0" text="Compétence 5- Conduire" GridPane.rowIndex="6" />
+            <Label layoutX="10.0" layoutY="317.0" maxHeight="1.7976931348623157E308" text="Compétence 6 - Collaborer" GridPane.rowIndex="7" />
+            <TextField fx:id="comp1" GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyPressed="#ActionComp1" />
+            <TextField fx:id="comp2" GridPane.columnIndex="1" GridPane.rowIndex="3" onKeyPressed="#ActionComp2" />
+            <TextField fx:id="comp3" GridPane.columnIndex="1" GridPane.rowIndex="4" onKeyPressed="#ActionComp3" />
+            <TextField fx:id="comp4" GridPane.columnIndex="1" GridPane.rowIndex="5" onKeyPressed="#ActionComp4" />
+            <TextField fx:id="comp5" GridPane.columnIndex="1" GridPane.rowIndex="6" onKeyPressed="#ActionComp5" />
+            <TextField fx:id="comp6" GridPane.columnIndex="1" GridPane.rowIndex="7" onKeyPressed="#ActionComp6" />
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                <children>
+                    <Button mnemonicParsing="false" text="Tracer" onAction="#tracerAction">
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                    </Button>
+                    <Button alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Vider" onAction="#viderAction" />
+                </children>
+                <padding>
+                    <Insets right="15.0" />
+                </padding>
+            </HBox>
+        </children>
+    </GridPane>
 </HBox>
