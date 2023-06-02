@@ -125,7 +125,25 @@ public class ToileController implements Initializable {
 
     @FXML
     private void viderAction() {
-        // Logique pour l'action du bouton "Vider"
-        System.out.println("Action du bouton Vider");
+        // Effacer les valeurs saisies
+        comp1.clear();
+        comp2.clear();
+        comp3.clear();
+        comp4.clear();
+        comp5.clear();
+        comp6.clear();
+
+        // Effacer les points dessinés
+        for (Circle point : points.values()) {
+            toile.getChildren().remove(point);
+        }
+        points.clear();
+
+        // Effacer les messages d'erreur
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText(null);
+        alert.setContentText("Données effacées !");
+        alert.showAndWait();
     }
 }
