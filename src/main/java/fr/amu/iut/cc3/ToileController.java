@@ -9,9 +9,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -23,6 +26,7 @@ public class ToileController implements Initializable {
     private static int noteMaximale = 20;
 
     private Map<String, Circle> points = new HashMap<>();
+    private List<Line> lines = new ArrayList<>();
 
     public TextField comp1;
     public TextField comp2;
@@ -119,8 +123,30 @@ public class ToileController implements Initializable {
 
     @FXML
     private void tracerAction() {
-        // Logique pour l'action du bouton "Tracer"
-        System.out.println("Action du bouton Tracer");
+        // Tracer les lignes entre les points
+        clearLines();
+        for (int i = 1; i <= 6; i++) {
+            String currentKey = "point_" + i;
+            String nextKey = "point_" + (i == 6 ? 1 : i + 1);
+
+            Circle currentPoint = points.get(currentKey);
+            Circle nextPoint = points.get(nextKey);
+
+            if (currentPoint != null && nextPoint != null) {
+                Line line = new Line(currentPoint.getCenterX(), currentPoint.getCenterY(),
+                        nextPoint.getCenterX(), nextPoint.getCenterY());
+                line.setStroke(Color.BLUE);
+                lines.add(line);
+                toile.getChildren().add(line);
+            }
+        }
+    }
+
+    private void clearLines() {
+        for (Line line : lines) {
+            toile.getChildren().remove(line);
+        }
+        lines.clear();
     }
 
     @FXML
@@ -138,6 +164,9 @@ public class ToileController implements Initializable {
             toile.getChildren().remove(point);
         }
         points.clear();
+
+        // Effacer les lignes tracées
+        clearLines();
 
         // Effacer les messages d'erreur
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
